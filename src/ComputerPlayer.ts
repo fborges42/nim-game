@@ -12,7 +12,16 @@ export class ComputerPlayer implements Player {
       ),
     ];
 
-    const cpuRandomAmountMatches = Math.floor(Math.random() * 3) + 1;
+    let cpuRandomAmountMatches = 0;
+    const totalMatches: number = availableMatches.length;
+    const remainingMatches: number = totalMatches - this.selectedMatches.length;
+    if (remainingMatches > 1) {
+      cpuRandomAmountMatches = (remainingMatches - 1) % 4; // module 4 winning strategy for nim
+      if (cpuRandomAmountMatches === 0) {
+        // just two matches left
+        cpuRandomAmountMatches = 1;
+      }
+    }
 
     for (let i = 0; i < cpuRandomAmountMatches; i++) {
       const randomIndex: number =

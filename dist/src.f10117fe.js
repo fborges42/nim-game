@@ -147,7 +147,16 @@ var ComputerPlayer = /*#__PURE__*/function () {
     key: "takeTurn",
     value: function takeTurn() {
       var availableMatches = _toConsumableArray(document.querySelectorAll(".matches__heap__match:not(.matches__heap__match--selected):not(.matches__heap__match--removed)"));
-      var cpuRandomAmountMatches = Math.floor(Math.random() * 3) + 1;
+      var cpuRandomAmountMatches = 0;
+      var totalMatches = availableMatches.length;
+      var remainingMatches = totalMatches - this.selectedMatches.length;
+      if (remainingMatches > 1) {
+        cpuRandomAmountMatches = (remainingMatches - 1) % 4; // module 4 winning strategy for nim
+        if (cpuRandomAmountMatches === 0) {
+          // just two matches left
+          cpuRandomAmountMatches = 1;
+        }
+      }
       for (var i = 0; i < cpuRandomAmountMatches; i++) {
         var randomIndex = Math.floor(Math.random() * availableMatches.length - 1) + 1;
         var cpuSelectedMatch = availableMatches.splice(randomIndex, 1)[0];
