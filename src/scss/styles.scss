@@ -32,7 +32,6 @@
   justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
-  border: solid 1px;
 
   .matches__heap {
     display: flex;
@@ -43,13 +42,12 @@
       box-sizing: border-box;
       cursor: pointer;
       user-select: none;
-      padding: 32px 32px;
+      padding: 24px 24px;
       margin: 8px;
       border: 1px solid black;
 
       &:hover {
         box-sizing: border-box;
-        // border: 3px inset blue;
         background-color: rebeccapurple;
       }
 
@@ -59,6 +57,11 @@
 
       &--removed {
         display: none;
+      }
+
+      &--svg {
+        width: 20px;
+        pointer-events: none;
       }
     }
   }

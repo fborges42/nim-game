@@ -1,0 +1,43 @@
+<!-- used https://boxy-svg.com/ -->
+<svg viewBox="19.902 7.311 78.671 273.738" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient gradientUnits="userSpaceOnUse" cx="219.752" cy="167.008" r="42.078" id="gradient-0" gradientTransform="matrix(1, 0, 0, 1, 0, 0)">
+      <stop offset="0" style="stop-color: rgba(129, 151, 57, 1)"></stop>
+      <stop offset="1" style="stop-color: rgba(66, 77, 29, 1)"></stop>
+    </radialGradient>
+    <radialGradient gradientUnits="userSpaceOnUse" cx="219.752" cy="167.008" r="42.078" id="gradient-1" gradientTransform="matrix(0.71224, 0, 0, 0.71224, 64.686737, 55.044987)">
+      <stop offset="0" style="stop-color: rgba(129, 151, 57, 1)"></stop>
+      <stop offset="1" style="stop-color: rgba(66, 77, 29, 1)"></stop>
+    </radialGradient>
+    <radialGradient gradientUnits="userSpaceOnUse" cx="219.752" cy="167.008" r="42.078" id="gradient-2" gradientTransform="matrix(0.275809, 0, 0, 0.369956, 158.485275, 126.536179)">
+      <stop offset="0" style="stop-color: rgba(129, 151, 57, 1)"></stop>
+      <stop offset="1" style="stop-color: rgba(66, 77, 29, 1)"></stop>
+    </radialGradient>
+    <radialGradient gradientUnits="userSpaceOnUse" cx="219.752" cy="157.312" r="42.078" id="gradient-3" spreadMethod="reflect" gradientTransform="matrix(1, 0, 0, 1, 0, 0)">
+      <stop offset="0" style="stop-color: rgba(209, 94, 48, 1)"></stop>
+      <stop offset="1" style="stop-color: rgba(127, 56, 28, 1)"></stop>
+    </radialGradient>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="221.204" y1="97.152" x2="221.204" y2="237.026" id="gradient-4" spreadMethod="reflect" gradientTransform="matrix(1, 0, 0, 1, 0, 0)">
+      <stop offset="0" style="stop-color: rgba(226, 143, 79, 1)"></stop>
+      <stop offset="1" style="stop-color: rgba(174, 92, 29, 1)"></stop>
+    </linearGradient>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="219.096" y1="148.408" x2="219.096" y2="221.063" id="gradient-5" gradientTransform="matrix(1, 0, 0, 1, 0, 0)">
+      <stop offset="0" style="stop-color: rgba(226, 92, 8, 1)"></stop>
+      <stop offset="1" style="stop-color: rgba(128, 52, 4, 1)"></stop>
+    </linearGradient>
+    <radialGradient gradientUnits="userSpaceOnUse" cx="343.823" cy="201.49" r="13.015" id="gradient-6" gradientTransform="matrix(1, 0, 0, 1, 0, 0)">
+      <stop offset="0" style="stop-color: rgba(87, 30, 29, 1)"></stop>
+      <stop offset="1" style="stop-color: rgba(10, 4, 3, 1)"></stop>
+    </radialGradient>
+  </defs>
+  <g transform="matrix(1, 0, 0, 1, -287.528809, -84.489624)">
+    <rect style="stroke-linecap: round; fill: rgb(242, 205, 0);" x="333.837" y="191.667" width="20.304" height="167.164" rx="5" ry="5"></rect>
+    <ellipse style="paint-order: stroke; stroke-width: 0px; fill-rule: nonzero; stroke: rgb(0, 0, 0); fill: url(#gradient-6);" cx="343.823" cy="201.49" rx="13.015" ry="17.395"></ellipse>
+    <path style="paint-order: stroke; stroke: rgb(0, 0, 0); stroke-width: 0px; fill: rgb(255, 255, 255);" d="M 347.764 191.558 C 351.398 192.556 351.665 199.149 350.926 202.074 C 350.599 203.372 350.293 204.439 349.847 205.627 C 349.685 206.058 349.424 206.473 349.192 206.866 C 349.093 207.036 348.676 207.44 348.849 207.347 C 350.556 206.429 352.482 205.074 352.914 202.915 C 353.914 197.92 352.481 190.953 346.616 190.953"></path>
+  </g>
+  <g style="" transform="matrix(0.608023, 0, 0, 0.652938, -75.218285, -24.828089)">
+    <path stroke-width="0" d="M 215.83 59.129 C 218.142 58.616 227.167 78.135 229.928 79.063 C 232.89 80.057 235.873 80.647 238.298 85.249 C 243.157 94.467 244.317 126.564 248.487 143.473 C 252.048 157.91 259.152 171.471 260.86 181.319 C 262.068 188.282 262.237 191.771 260.86 198.058 C 259.136 205.927 253.566 217.68 249.215 224.987 C 245.546 231.147 241.944 235.625 237.206 239.907 C 232.387 244.262 226.727 248.283 220.467 250.824 C 213.93 253.477 204.61 256.496 198.633 255.191 C 193.384 254.044 188.905 249.069 185.896 245.365 C 183.216 242.066 182.079 239.589 180.802 234.448 C 178.876 226.7 177.034 209.787 177.89 200.969 C 178.539 194.287 179.983 191.811 182.985 184.958 C 187.524 174.596 201.229 154.012 205.547 143.473 C 208.437 136.42 209.049 132.753 209.914 126.734 C 210.85 120.214 210.686 111.807 210.642 105.627 C 210.604 100.407 208.814 95.92 209.914 91.799 C 210.973 87.828 212.52 69.5 213.474 66.64 C 216.633 57.167 213.998 59.535 215.83 59.129 Z" style="stroke-width: 2px; stroke: url(#gradient-0); stroke-linecap: round; fill: url(#gradient-3); paint-order: stroke;"></path>
+    <path d="M 218.41 97.159 C 220.056 96.794 226.485 110.696 228.451 111.357 C 230.56 112.065 232.686 112.485 234.413 115.763 C 237.874 122.328 238.7 145.189 241.67 157.232 C 244.205 167.515 249.266 177.174 250.482 184.187 C 251.343 189.148 251.463 191.632 250.482 196.11 C 249.254 201.715 245.287 210.085 242.188 215.29 C 239.575 219.678 237.01 222.867 233.635 225.916 C 230.202 229.019 226.171 231.882 221.713 233.692 C 217.057 235.582 210.419 237.732 206.162 236.803 C 202.423 235.986 199.233 232.442 197.09 229.804 C 195.181 227.455 194.372 225.69 193.462 222.028 C 192.09 216.51 190.778 204.464 191.388 198.183 C 191.849 193.425 192.878 191.661 195.017 186.78 C 198.249 179.4 208.01 164.739 211.086 157.232 C 213.144 152.209 213.581 149.597 214.196 145.31 C 214.863 140.666 214.746 134.679 214.715 130.277 C 214.688 126.559 213.412 123.363 214.196 120.428 C 214.95 117.6 216.052 104.546 216.732 102.509 C 218.982 95.762 217.105 97.448 218.41 97.159 Z" style="stroke-linecap: round; stroke: url(#gradient-1); fill: url(#gradient-4); paint-order: stroke; stroke-width: 0px;"></path>
+    <path d="M 218.014 148.412 C 218.651 148.222 221.141 155.443 221.902 155.786 C 222.719 156.155 223.542 156.372 224.211 158.075 C 225.551 161.485 225.871 173.36 227.021 179.615 C 228.002 184.956 229.963 189.974 230.433 193.617 C 230.767 196.193 230.813 197.484 230.433 199.809 C 229.958 202.721 228.421 207.069 227.222 209.772 C 226.21 212.051 225.217 213.708 223.909 215.291 C 222.58 216.904 221.02 218.39 219.293 219.331 C 217.49 220.312 214.919 221.429 213.271 220.947 C 211.823 220.522 210.588 218.681 209.758 217.311 C 209.018 216.091 208.705 215.175 208.353 213.272 C 207.821 210.406 207.314 204.149 207.55 200.887 C 207.728 198.415 208.126 197.498 208.955 194.963 C 210.206 191.13 213.986 183.514 215.178 179.615 C 215.975 177.007 216.144 175.65 216.382 173.423 C 216.64 171.01 216.595 167.901 216.583 165.614 C 216.572 163.683 216.078 162.023 216.382 160.498 C 216.674 159.029 217.1 152.249 217.364 151.191 C 218.235 147.686 217.509 148.562 218.014 148.412 Z" style="stroke-linecap: round; stroke: url(#gradient-2); fill: url(#gradient-5); paint-order: stroke; stroke-width: 0px;"></path>
+  </g>
+</svg>
