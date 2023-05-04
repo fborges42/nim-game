@@ -1,6 +1,6 @@
-import { ComputerPlayer } from "./ComputerPlayer";
-import { HumanPlayer } from "./HumanPlayer";
-import { NimGame } from "./NimGame";
+import { ComputerPlayer } from "./nim-game/ComputerPlayer";
+import { NimGame } from "./nim-game/NimGame";
+import { HumanPlayer } from "./nim-game/HumanPlayer";
 
 const humanPlayer = new HumanPlayer("Fábio");
 const computerPlayer = new ComputerPlayer("CPU");

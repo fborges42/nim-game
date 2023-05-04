@@ -1,11 +1,21 @@
-import { Player } from "./Player";
+import { SessionStorage } from "../session/SessionStorage";
+import { IMatch } from "./IMatch";
+import { IPlayer } from "./IPlayer";
+import { NimState } from "./session/NimState";
 
-export class ComputerPlayer implements Player {
-  constructor(public name: string) {}
-  selectedMatches: MatchInterface[] = [];
+export class ComputerPlayer implements IPlayer {
+  protected readonly nimState: NimState;
+  selectedMatches: IMatch[] = [];
   isHuman = false;
+  isPlayerTurn = false;
+
+  constructor(public name: string) {
+    this.nimState = new NimState(new SessionStorage());
+    this.nimState.setItem(this.name, this);
+  }
 
   takeTurn(): number {
+    this.isPlayerTurn = true;
     const availableMatches: Element[] = [
       ...document.querySelectorAll(
         ".matches__heap__match:not(.matches__heap__match--selected):not(.matches__heap__match--removed)"
@@ -39,15 +49,20 @@ export class ComputerPlayer implements Player {
       });
     }
 
-    console.log(
-      `Computer selected random matches: ${this.selectedMatches.length}`
-    );
-
     return this.selectedMatches.length;
   }
 
   endTurn(): void {
+    this.isPlayerTurn = false;
+    this.nimState.setSelectedMatches(this.name, this.selectedMatches);
     this.selectedMatches = [];
+  }
+
+  restartGame(): void {
+    debugger;
+    this.selectedMatches = [];
+    this.nimState.removeItem(this.name);
+    this.nimState.setItem(this.name, this);
   }
 
   getMatchId(match: Element): number {

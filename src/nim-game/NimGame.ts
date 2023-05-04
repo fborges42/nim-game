@@ -1,18 +1,48 @@
 import { ComputerPlayer } from "./ComputerPlayer";
+import { IMatch } from "./IMatch";
 import { HumanPlayer } from "./HumanPlayer";
-import { Player } from "./Player";
+import { IPlayer } from "./IPlayer";
+import { SessionStorage } from "../session/SessionStorage";
 
 export class NimGame {
-  private players: Player[] = [];
+  private players: IPlayer[] = [];
   private matchesLeft = 13;
   private currentPlayerIndex = 0;
-  private currentPlayer!: Player;
+  private currentPlayer!: IPlayer;
+  sessionStorage: SessionStorage;
 
   constructor(humanPlayer: HumanPlayer, computerPlayer: ComputerPlayer) {
     this.players.push(humanPlayer, computerPlayer);
+    this.sessionStorage = new SessionStorage();
+  }
+
+  get getMatchesLeft(): number {
+    return this.matchesLeft;
   }
 
   start(): void {
+    this.watchDomEvents();
+    this.getGameState();
+  }
+
+  private getGameState() {
+    this.players.forEach((player) => {
+      const playerState: IPlayer | null = this.sessionStorage.getItem(
+        player.name
+      );
+      if (playerState) {
+        player = playerState;
+        if (playerState.isPlayerTurn) {
+          this.currentPlayer = player;
+          this.currentPlayerIndex = player.isHuman ? 0 : 1;
+        }
+
+        this.removeMatches(playerState);
+      }
+    });
+  }
+
+  private watchDomEvents() {
     const domMatches: Element[] = [
       ...document.querySelectorAll(".matches__heap__match"),
     ];
@@ -25,16 +55,15 @@ export class NimGame {
     domRemoveBtn?.addEventListener("click", () => this.removeMatches());
   }
 
-  takeTurn($event: Event): void {
+  private takeTurn($event: Event): void {
     this.currentPlayer = this.players[this.currentPlayerIndex];
+    debugger;
     const pickedMatch = $event.target as HTMLElement;
-    const numMatches = this.currentPlayer.takeTurn(pickedMatch);
-
-    console.log(`${this.currentPlayer.name} takes ${numMatches} matches.`);
+    this.currentPlayer.takeTurn(pickedMatch);
   }
 
-  removeMatches() {
-    this.matchesLeft -= this.currentPlayer.selectedMatches.length;
+  private removeMatches(player: IPlayer = this.currentPlayer) {
+    this.matchesLeft -= player.selectedMatches.length;
 
     const availableMatches: NodeListOf<Element> | null =
       document.querySelectorAll(
@@ -42,7 +71,7 @@ export class NimGame {
       );
 
     if (availableMatches.length <= 1) {
-      alert(`${this.currentPlayer.name} wins!`);
+      alert(`${player.name} wins!`);
       return this.restartGame();
     }
 
@@ -51,29 +80,24 @@ export class NimGame {
       document.querySelectorAll(
         ".matches__heap__match:not(.matches__heap__match--removed)"
       );
-    this.currentPlayer?.selectedMatches?.forEach(
-      (selectedMatch: MatchInterface) => {
-        domMatchesNotRemoved.forEach((matchElement: Element) => {
-          if (selectedMatch.id === this.getMatchId(matchElement)) {
-            matchElement.classList.add("matches__heap__match--removed");
-          }
-        });
-      }
-    );
+    player?.selectedMatches?.forEach((selectedMatch: IMatch) => {
+      domMatchesNotRemoved.forEach((matchElement: Element) => {
+        if (selectedMatch.id === this.getMatchId(matchElement)) {
+          selectedMatch.isRemoved = true;
+          matchElement.classList.add("matches__heap__match--removed");
+        }
+      });
+    });
 
     // pass turn to other player
     this.endTurn();
   }
 
-  get getMatchesLeft(): number {
-    return this.matchesLeft;
-  }
-
-  getMatchId(match: Element): number {
+  private getMatchId(match: Element): number {
     return +(match.getAttribute("id") ?? 0);
   }
 
-  restartGame(): void {
+  private restartGame(): void {
     const allMatches: NodeListOf<Element> | null = document.querySelectorAll(
       ".matches__heap__match"
     );
@@ -82,10 +106,10 @@ export class NimGame {
       match.classList.remove("matches__heap__match--selected");
     });
 
-    this.endTurn();
+    this.players.forEach((player) => player.restartGame());
   }
 
-  endTurn(): void {
+  private endTurn(): void {
     this.currentPlayer.endTurn();
 
     const nextPlayerIndex = (this.currentPlayerIndex + 1) % 2;
